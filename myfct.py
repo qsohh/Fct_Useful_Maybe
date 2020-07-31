@@ -1,5 +1,6 @@
 
 # import public modules
+import os
 import numpy as np
 import scipy.signal as sg
 
@@ -71,3 +72,15 @@ def dftfreq(n, d):
     Output : F : the frequences
     '''
     return np.fft.fftfreq(n, d)
+
+
+# Call a Python script
+def CallScript(filename, path=''):
+    '''
+    Fonction : CallScription(filename, path='')
+    Input : filename
+            path
+    Output : None
+    '''
+    with open(os.path.join(filename)) as f:
+        exec(f.read())
